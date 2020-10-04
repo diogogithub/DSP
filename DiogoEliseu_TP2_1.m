@@ -1,19 +1,30 @@
-% Exercício 1
+%% Inicialização do ambiente
+clear ; close all; clc
+
+%% Exercício 1
+n = -20:20; % janela
+
+% Impulso def
 impulso = zeros(1,41);
 impulso(21) = 1;
-degrau = (n>=0);
-n = -20:20;
 
+% Degraup def
+degrau = (n >= 0);
+
+% Figura com os resultados
+figure
+% Plot da sequência X
+subplot(2,2,1:2)
 x = fun_x(n);
-figure
 stem(n, x)
-
-figure
+% Plot do impulso
+subplot(2,2,3)
 stem(n, impulso)
-
-figure
+% Plot do degrau
+subplot(2,2,4)
 stem(n, degrau)
 
+% Definição da sequência X
 function p = fun_x(N)
     A=1.8;
     f=0.05;
