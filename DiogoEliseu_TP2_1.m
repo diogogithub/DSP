@@ -8,7 +8,7 @@ n = -20:20; % janela
 impulso = zeros(1,41);
 impulso(21) = 1;
 
-% Degraup def
+% Degrau def
 degrau = (n >= 0);
 
 % Figura com os resultados
