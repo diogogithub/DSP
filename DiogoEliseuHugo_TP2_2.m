@@ -1,5 +1,5 @@
 %% Exercício 2
-function DiogoEliseu_TP2_2(N1, N2)
+function DiogoEliseuHugo_TP2_2(N1, N2)
     n = N1:N2;
     
     % Impulso def
