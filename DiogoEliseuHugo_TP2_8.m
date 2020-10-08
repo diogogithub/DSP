@@ -37,6 +37,8 @@ plot(y5)
 
 hold off
 
+legend("s","x","y3","y5");
+
 fprintf("erro de x aproximado a s: %f\n",  DiogoEliseuHugo_TP2_6(x, s));
 fprintf("erro de y3 aproximado a s: %f\n", DiogoEliseuHugo_TP2_6(y3, s));
 fprintf("erro de y5 aproximado a s: %f\n", DiogoEliseuHugo_TP2_6(y5, s));
