@@ -18,4 +18,7 @@ plot(s);
 plot(r);
 plot(x);
 hold off
-DiogoEliseuHugo_TP2_6(s, x)
+
+legend('s', 'r', 'x')
+
+title(['Erro de aproximação de x a s: ' num2str(DiogoEliseuHugo_TP2_6(s, x))])

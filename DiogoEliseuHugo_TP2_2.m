@@ -15,12 +15,15 @@ function DiogoEliseuHugo_TP2_2(N1, N2)
     subplot(2,2,1:2)
     x = fun_x(n);
     stem(n, x)
+    title('x')
     % Plot do impulso
     subplot(2,2,3)
     stem(n, impulso)
+    title('\delta')
     % Plot do degrau
     subplot(2,2,4)
     stem(n, degrau)
+    title('\mu')
 end
 
 %% Definição da sequência X

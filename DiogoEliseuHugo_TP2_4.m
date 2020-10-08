@@ -16,9 +16,12 @@ figure
 % Plot de x1
 subplot(3,1,1)
 stem(n, x1)
+title('x1')
 % Plot de x2
 subplot(3,1,2)
 stem(n, x2)
+title('x2')
 % Plot de x3
 subplot(3,1,3)
 stem(n, x3)
+title('x3')
