@@ -6,34 +6,37 @@ clear ; close all; clc
 rng(42);
 
 %% Exercício 8
-N = 0:80;
+N_len = 81;
+N = 0:(N_len-1);
 
 s = 2 * N .* (0.9.^N);
-r = rand(1,81) - 0.5;
+r = rand(1,N_len) - 0.5;
 x = s + r;
+
+xc = [0 x 0];
+xe = [x 0 0];
+xd = [0 0 x];
 
 figure
 hold on
 plot(s)
 plot(x)
-y3 = my_filter(1, 3, s);
+
+xnovo = (xc + xe + xd) / 3;
+y3 = xnovo(2:N_len+1);
 plot(y3)
-y5 = my_filter(1, 5, x);
+
+xc =  [0 0 x 0 0];
+xe =  [x 0 0 0 0];
+xd =  [0 0 0 0 x];
+xee = [0 x 0 0 0];
+xdd = [0 0 0 x 0];
+xnovo = (xc + xe + xd + xee + xdd) / 5;
+y5 = xnovo(4:N_len+3);
 plot(y5)
+
 hold off
 
-fprintf("erro de x aproximado a s: %f\n", erro(x, s));
-fprintf("erro de y3 aproximado a s: %f\n", erro(y3, s));
-fprintf("erro de y5 aproximado a s: %f\n", erro(y5, s));
-
-function y = my_filter(A, SIZE, X)
-   y = conv(X / (SIZE.^2), SIZE, 'valid');
-end
-
-function er = erro(X1,X2)
-    er = norma(X2-X1,2) / norma(X1,2);
-end
-
-function s = norma(X, P)
-    s = sum(abs(X).^P).^(1/P);
-end
+fprintf("erro de x aproximado a s: %f\n",  DiogoEliseuHugo_TP2_6(x, s));
+fprintf("erro de y3 aproximado a s: %f\n", DiogoEliseuHugo_TP2_6(y3, s));
+fprintf("erro de y5 aproximado a s: %f\n", DiogoEliseuHugo_TP2_6(y5, s));
