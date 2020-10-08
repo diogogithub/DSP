@@ -1,7 +1,7 @@
 %% Exercício 2
 function DiogoEliseuHugo_TP2_2(N1, N2)
     n = N1:N2;
-    
+
     % Impulso def
     impulso = zeros(1, abs(N1) + N2 + 1);
     impulso(ceil(length(n)/2)) = 1;
