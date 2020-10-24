@@ -6,15 +6,18 @@ function [Vmax, Lmax] = DiogoEliseuHugo_TP2_13(X, Y, GRAF)
     n4 = 1:(size(Y, 2) * 2) - 1;
     n5 = 1:(max(size(X, 2), size(Y, 2)) * 2) - 1;
     
-    rxx = xcorr(X, X);
-    ryy = xcorr(Y, Y);
+    rxx = xcorr(X);
+    ryy = xcorr(Y);
     X0 = max(rxx);
     Y0 = max(ryy);
     R0xx = rxx / X0;
     R0yy = ryy / Y0;
-    R0xy = xcorr(X, Y) / sqrt(X0 * Y0);
-            
+    R0xy = xcorr(X, Y, size(n5, 1)) / sqrt(X0 * Y0);
+    
+    n5 = size(R0xy, 1);
+    
     if (GRAF == 1)
+        figure
         subplot(5,1,1),plot(n1, X)
         xlabel('n'),title('$x[n]$', 'Interpreter', 'latex', 'FontSize', 14) 
         subplot(5,1,2),plot(n2, Y)
