@@ -2,24 +2,19 @@
 clear ; close all; clc
 
 %% Exercício 11
-n = 0:255; %% Inicialização do ambiente
+n = 0:255;
+x = cos(20*pi*n/256)+cos(200*pi*n/256); 
 
+cx1 = [0.5,0.4,0.3]; 
+y1 = filter(cx1,1,x); 
 
-x = cos((20 * pi * n)/256) + cos((200 * pi * n)/256);
+cx2 = [0.4,0.5,0.4]; 
+cy2 = [1,-0.5,0.4]; 
+y2 = filter(cx2,cy2,x); 
 
-figure
-subplot(3, 1, 1)
-stem(n, x)
-
-subplot(3, 1, 2)
-y1 = 0.5 * x + 0.4 * [x(1, 2:size(x, 2)) 0] + 0.3 * [x(1, 3:size(x, 2)) 0 0];
-stem(n, y1)
-
-subplot(3, 1, 3)
-y2 = zeros(size(n));
-y2(1) = y1(1);
-y2(2) = y1(2);
-for i = 3:255
-    y2(i) = y1(i) + 0.5 * y2(i - 1) - 0.4 * y2(i - 2);
-end
-stem(n, y2)
+subplot(3,1,1),plot(n,x) 
+xlabel('n'),ylabel('Amplitude'),title('x[n]') 
+subplot(3,1,2),plot(n,y1) 
+xlabel('n'),ylabel('Amplitude'),title('y1[n]')
+subplot(3,1,3),plot(n,y2)
+xlabel('n'),ylabel('Amplitude'),title('y2[n]')
