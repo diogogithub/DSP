@@ -13,12 +13,14 @@ DTFT2 = fft(x2, 1024);
 
 subplot(2,1,1)
 stem(x2)
+xlabel('n'), ylabel('Amplitude'), title('Sinal x2')
+
 subplot(2,1,2)
 hold on
-stem(X(16),abs(DFT2))
+stem(X(16), abs(DFT2), "LineStyle", "none")
 plot(X(1024), abs(DTFT2))
+xlabel('\omega/2\pi'), ylabel('Modulo'), title('DFT / DTFT de x2')
 hold off
-xlabel('cenas'), ylabel('Modulo'), title('DFT / DTFT de x2')
 
 function f = X(N)
 f = 0:(1/N):(1 - 1/N);
