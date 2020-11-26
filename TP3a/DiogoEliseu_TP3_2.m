@@ -10,7 +10,22 @@ cello = importdata('cello.mat');
 EEG = importdata('EEG.mat');
 EEG = EEG';
 
-N = 256;
+% sinal sintetico
+Ls = length(sintetico);
+Ts = 0.125;
+Fs = 1/Ts;
+Fs_vector = (0:Ls-1)/Ls * Fs;
+
+% sinal cello
+Lc = length(cello.x);
+Tc = cello.dt;
+Fc = 1/Tc;
+Fc_vector = (0:Lc-1)/Lc * Fc;
+
+% sinal EEG
+Le = length(EEG);
+Fe = 100;
+Fe_vector = (1:Le-1)/Le * Fe;
 
 figure(1)
 
@@ -19,9 +34,8 @@ plot(sintetico);
 title('sinal sintetico');
 
 subplot(2,1,2)
-DFT_Xa = fft(sintetico, N+1);
-DFT_Xa = DFT_Xa(1 : (N+1)/2);
-plot(X((N+1)/2, 0, 1),abs(DFT_Xa))
+DFT_synth = fft(sintetico, Ls);
+plot(Fs_vector, abs(DFT_synth))
 xlabel('\omega/\pi'), ylabel('|X(\omega)|'), title('DFT sintetico em [0, \pi]')
 
 figure(2)
@@ -31,9 +45,8 @@ plot(cello.x);
 title('sinal cello');
 
 subplot(2,1,2)
-DFT_cello = fft(cello.x, N+1);
-DFT_cello = DFT_cello(1 : (N+1)/2);
-plot(X((N+1)/2, 0, 1),abs(DFT_cello))
+DFT_cello = fft(cello.x, Lc);
+plot(Fc_vector, abs(DFT_cello))
 xlabel('\omega/\pi'), ylabel('|X(\omega)|'), title('DFT cello em [0, \pi]')
 
 figure(3)
@@ -43,9 +56,8 @@ plot(EEG);
 title('sinal EEG');
 
 subplot(2,1,2)
-DFT_EEG = fft(EEG, N+1);
-DFT_EEG = DFT_EEG(1 : (N+1)/2);
-plot(X((N+1)/2, 0, 1),abs(DFT_EEG))
+DFT_EEG = fft(EEG, Le-1);
+plot(Fe_vector, abs(DFT_EEG))
 xlabel('\omega/\pi'), ylabel('|X(\omega)|'), title('DFT EEG em [0, \pi]')
 
 
