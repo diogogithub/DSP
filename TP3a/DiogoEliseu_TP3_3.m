@@ -11,11 +11,14 @@ N = length(sintetico);
 FS = 8;
 f = (0:N-1)/N*FS;
 
+T = 0.125;
+t = (0:N-1)/N*T;
+
 figure(1)
 
 subplot(2,2,1)
-plot(f, sintetico);
-title('sinal sintetico');
+plot(t, sintetico);
+xlabel('t'), ylabel('x(t)'), title('sinal sintetico');
 
 subplot(2,2,2)
 DFT_Xa = fft(sintetico, N);
@@ -27,11 +30,11 @@ low_pass_filter = ones(N,1);
 low_pass_filter(81:177) = 0; % 2.5 H 5.5
 DFT_Xa_filtered = DFT_Xa.*low_pass_filter;
 plot(f, abs(DFT_Xa_filtered))
-xlabel('\omega/\pi'), ylabel('|X(\omega)|'), title('DFT sintetico em [0, 2\pi] filtrada')
+xlabel('\omega/\pi'), ylabel('|Y(\omega)|'), title('DFT sintetico em [0, 2\pi] filtrada')
 
 subplot(2,2,4)
-plot(f, abs(ifft(DFT_Xa_filtered)));
-title('sinal sintetico filtrado');
+plot(t, abs(ifft(DFT_Xa_filtered)));
+xlabel('t'), ylabel('y(t)'), title('sinal sintetico filtrado');
 
 
 function f = X(N, inicio, fim)
