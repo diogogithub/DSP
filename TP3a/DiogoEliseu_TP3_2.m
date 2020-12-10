@@ -31,7 +31,7 @@ figure(1)
 
 subplot(2,1,1)
 plot(sintetico);
-xlabel('t'), ylabel('sintetico(t)'), title('sinal sintetico');
+xlabel('t'), ylabel('sintetico[t]'), title('sinal sintetico');
 
 subplot(2,1,2)
 DFT_synth = fft(sintetico, Ls);
@@ -43,7 +43,7 @@ figure(2)
 
 subplot(2,1,1)
 plot(cello.x);
-xlabel('t'), ylabel('cello(t)'), title('sinal cello');
+xlabel('t'), ylabel('cello[t]'), title('sinal cello');
 
 subplot(2,1,2)
 DFT_cello = fft(cello.x, Lc);
@@ -55,7 +55,7 @@ figure(3)
 
 subplot(2,1,1)
 plot(EEG);
-xlabel('t'), ylabel('eeg(t)'), title('sinal EEG');
+xlabel('t'), ylabel('eeg[t]'), title('sinal EEG');
 
 subplot(2,1,2)
 DFT_EEG = fft(EEG, Le-1);
