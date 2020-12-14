@@ -1,5 +1,5 @@
 %% Exercício 6
-function er = DiogoEliseuHugo_TP2_6(X1,X2)
+function er = DiogoEliseuHugo_TP1_6(X1,X2)
     er = norma(X2-X1,2) / norma(X1,2);
 end
 

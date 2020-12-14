@@ -38,5 +38,5 @@ plot(y5)
 hold off
 
 legend('s', 'x', 'y3', 'y5');
-errors = ['Ex: ' num2str(DiogoEliseuHugo_TP2_6(x, s)) ' Ey3: ' num2str(DiogoEliseuHugo_TP2_6(y3, s)) ' Ey5: ' num2str(DiogoEliseuHugo_TP2_6(y5, s))];
+errors = ['Ex: ' num2str(DiogoEliseuHugo_TP1_6(x, s)) ' Ey3: ' num2str(DiogoEliseuHugo_TP1_6(y3, s)) ' Ey5: ' num2str(DiogoEliseuHugo_TP1_6(y5, s))];
 title(errors)

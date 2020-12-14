@@ -1,5 +1,5 @@
 %% Exercício 13
-function [Vmax, Lmax] = DiogoEliseuHugo_TP2_13(X, Y, GRAF)
+function [Vmax, Lmax] = DiogoEliseuHugo_TP1_13(X, Y, GRAF)
     n1 = 1:size(X, 2);
     n2 = 1:size(Y, 2);
     n3 = 1:(size(X, 2) * 2) - 1;

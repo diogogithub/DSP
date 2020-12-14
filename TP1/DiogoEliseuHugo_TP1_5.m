@@ -1,5 +1,5 @@
 %% Exercício 5
-function DiogoEliseuHugo_TP2_5(X)
+function DiogoEliseuHugo_TP1_5(X)
     plot(X);
     fprintf('L_1: %d\n', norma(X,1));
     fprintf('L_2: %f\n', norma(X,2));

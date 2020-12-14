@@ -1,5 +1,5 @@
 %% Inicialização do ambiente
-clear ; close all; clc
+clear; close all; clc
 
 %% Exercício 4
 fc = 0.3;

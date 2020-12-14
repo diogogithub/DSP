@@ -1,5 +1,5 @@
 %% Inicialização do ambiente
-clear ; close all; clc
+clear; close all; clc
 
 %% Exercício 6
 sintetico_data = fopen('sintetico.csv');

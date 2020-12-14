@@ -21,4 +21,4 @@ hold off
 
 legend('s', 'r', 'x')
 
-title(['Erro de aproximação de x a s: ' num2str(DiogoEliseuHugo_TP2_6(s, x))])
+title(['Erro de aproximação de x a s: ' num2str(DiogoEliseuHugo_TP1_6(s, x))])
