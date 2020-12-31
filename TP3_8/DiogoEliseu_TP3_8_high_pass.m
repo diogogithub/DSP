@@ -38,7 +38,7 @@ plot(Fv_half, signal(1:(L/2+1)))
 grid
 xlabel("Frequência (Hz)"); ylabel("Amplitude"); title("Sinal")
 subplot(2,3,5)
-plot(Fv_half, y_filtered)
+plot(Fv_half, signal_filtered(1:(L/2+1)))
 grid
 xlabel("Frequência (Hz)"); ylabel("Amplitude"); title("Sinal Filtrado")
 subplot(2,3,3)
