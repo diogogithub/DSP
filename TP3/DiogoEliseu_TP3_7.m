@@ -10,6 +10,7 @@ s = y(:,1);
 % F: vector of cyclical frequencies
 % T: vector of time instants
 % P: power spectral density (PSD)
+                    % signal, window, noverlap, nfft, fs
 [S, F, T, P] = spectrogram(s, 128, 96, 128, Fs);
 
 figure(1)
