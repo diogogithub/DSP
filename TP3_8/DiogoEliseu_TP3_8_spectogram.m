@@ -1,7 +1,7 @@
 %% Inicialização do ambiente
 clear; close all; clc
 
-%% Exercício 8 part 2: electric boogaloo
+%% Exercício 8 part 2
 %% First bird - Common Chiffchaff
 
 [y, Fs] = audioread("Canto1.mp3");
