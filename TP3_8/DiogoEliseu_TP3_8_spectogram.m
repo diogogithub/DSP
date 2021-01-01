@@ -38,7 +38,7 @@ f_s_half = f_s_2pi(1:(length(f_s_2pi)/2));
 DFT_s = fft(s);
 DFT_s_half = DFT_s(1 : (L_s/2));
 plot(f_s_half, abs(DFT_s_half));
-title("X in function of the frequency (kHz)"); ylabel("Amplitude (Hz)"); xlabel("Frequency (kHz)");
+title("X in function of the frequency (kHz)"); ylabel("Amplitude"); xlabel("Frequency (kHz)");
 
 % DFT chirp
 subplot(2,2,4)
@@ -48,7 +48,7 @@ f_s_chirp_half = f_s_chirp_2pi(1:(length(f_s_chirp_2pi)/2));
 DFT_s = fft(s_chirp);
 DFT_s_chirp_half = DFT_s(1 : (L_s_chirp/2));
 plot(f_s_chirp_half, abs(DFT_s_chirp_half));
-title("Xs in function of the frequency (kHz)"); ylabel("Amplitude (Hz)"); xlabel("Frequency (kHz)");
+title("Xs in function of the frequency (kHz)"); ylabel("Amplitude"); xlabel("Frequency (kHz)");
 
 %% Second bird - Black-winged Stilt
 
@@ -86,7 +86,7 @@ f_s_half = f_s_2pi(1:(length(f_s_2pi)/2));
 DFT_s = fft(s);
 DFT_s_half = DFT_s(1 : (L_s/2));
 plot(f_s_half, abs(DFT_s_half));
-title("X in function of the frequency (kHz)"); ylabel("Amplitude (Hz)"); xlabel("Frequency (kHz)");
+title("X in function of the frequency (kHz)"); ylabel("Amplitude"); xlabel("Frequency (kHz)");
 
 % DFT chirp
 subplot(2,2,4)
@@ -96,7 +96,7 @@ f_s_chirp_half = f_s_chirp_2pi(1:(length(f_s_chirp_2pi)/2));
 DFT_s = fft(s_chirp);
 DFT_s_chirp_half = DFT_s(1 : (L_s_chirp/2));
 plot(f_s_chirp_half, abs(DFT_s_chirp_half));
-title("Xs in function of the frequency (kHz)"); ylabel("Amplitude (Hz)"); xlabel("Frequency (kHz)");
+title("Xs in function of the frequency (kHz)"); ylabel("Amplitude"); xlabel("Frequency (kHz)");
 
 %% Third bird - Grey Heron
 
@@ -134,7 +134,7 @@ f_s_half = f_s_2pi(1:(length(f_s_2pi)/2));
 DFT_s = fft(s);
 DFT_s_half = DFT_s(1 : (L_s/2));
 plot(f_s_half, abs(DFT_s_half));
-title("X in function of the frequency (kHz)"); ylim([0 300]);ylabel("Amplitude (Hz)"); xlabel("Frequency (kHz)");
+title("X in function of the frequency (kHz)"); ylim([0 300]);ylabel("Amplitude"); xlabel("Frequency (kHz)");
 
 % DFT chirp
 subplot(2,2,4)
@@ -144,5 +144,5 @@ f_s_chirp_half = f_s_chirp_2pi(1:(length(f_s_chirp_2pi)/2));
 DFT_s = fft(s_chirp);
 DFT_s_chirp_half = DFT_s(1 : (L_s_chirp/2));
 plot(f_s_chirp_half, abs(DFT_s_chirp_half));
-title("Xs in function of the frequency (kHz)");ylim([0 40]); ylabel("Amplitude (Hz)"); xlabel("Frequency (kHz)");
+title("Xs in function of the frequency (kHz)");ylim([0 40]); ylabel("Amplitude"); xlabel("Frequency (kHz)");
 
